@@ -7,11 +7,16 @@
 // @match        file://*/*
 // ==/UserScript==
 
-(function() {
+(function twofish(){
     'use strict';
-    // Obtener el cifrado
+    // Obtiene las variables
     var code = document.getElementsByClassName("twofish");
     var c = code[0].id;
-    // pop up con el cifrado
-    alert(c);
+    var key = document.getElementsByClassName("key");
+    var k = key[0].id;
+    // Descencripta el mensaje
+    var decryted = twofish.decrypt(key,msg);
+    // pop up con el mensaje descencriptado
+    alert(str(decryted))
+    
 })();
