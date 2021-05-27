@@ -1,4 +1,4 @@
-from twofish import Twofish
+include ':libs:twofish Python'
 import webbrowser
 
 #Cosas de cifrado
