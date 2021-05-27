@@ -1,14 +1,15 @@
-include ':libs:twofish Python'
+from twofish import Twofish
 import webbrowser
 
-#Cosas de cifrado
-key = ')H&53,PMyCBuY[72C_Mc'
+#Ingresar clave de cifrado
+key = input('Ingrese una clave para cifrar: ')
+#Ejemplo: )H&53,PMyCBuY[72C_Mc
 x = Twofish(b"""key""")
-y = x.encrypt(b'tengoquetenercar')
+#Mensaje cifrado: 
+y = x.encrypt(b"mimamamemimamama")
 Cifrado = str(y)
-Descifrado = str(x.decrypt(y).decode())
 
-#El html
+#Crear el html
 html_archivo = """<!DOCTYPE html>
 <html lang="es">
     <head>
@@ -24,7 +25,7 @@ html_archivo = """<!DOCTYPE html>
     </body>
 </html>
 """
-
+#Crea el archivo .html y lo abre
 with open('html_archivo.html', 'w') as f:
     f.write(str(html_archivo))
 webbrowser.open("html_archivo.html")
